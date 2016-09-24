@@ -1,0 +1,36 @@
+------TABLA ESTUDIANTES
+CREATE TABLE public.estudiantes
+(
+    id_estudiante integer NOT NULL DEFAULT nextval('estudiantes_id_estudiante_seq'::regclass),
+    nombre character varying(30) COLLATE "default".pg_catalog,
+    apellidos character varying(30) COLLATE "default".pg_catalog,
+    curso character varying(30) COLLATE "default".pg_catalog,
+    anio integer,
+    CONSTRAINT estudiantes_pkey PRIMARY KEY (id_estudiante)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.estudiantes
+    OWNER to postgres;
+
+
+-------TABLA PROVEEDORES
+CREATE TABLE public.proveedores
+(
+    id_proveedor integer NOT NULL DEFAULT nextval('proveedores_id_proveedor_seq'::regclass),
+    nombre character varying(40) COLLATE "default".pg_catalog,
+    domicilio character varying(40) COLLATE "default".pg_catalog,
+    celular character varying(20) COLLATE "default".pg_catalog,
+    sitioweb character varying(50) COLLATE "default".pg_catalog,
+    CONSTRAINT proveedores_pkey PRIMARY KEY (id_proveedor)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.proveedores
+    OWNER to postgres;
